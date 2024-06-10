@@ -1,0 +1,44 @@
+GRANT ALL PRIVILEGES ON STUDENTS TO SURIYA;
+
+CREATE TABLE STUDENTS (
+    rollNo INT PRIMARY KEY,
+    firstName VARCHAR(50) NOT NULL,
+    DOB VARCHAR(10),
+    percentage INT,
+    contactNo VARCHAR(15)
+);
+
+DESC STUDENTS;
+
+
+INSERT INTO STUDENTS (rollNo, firstName, DOB, percentage, contactNo)
+VALUES (123, 'Aswin', '2005-07-07', 75, '9789318728');
+
+SELECT * FROM STUDENTS;
+
+
+INSERT INTO STUDENTS VALUES(&rollNo, '&firstName', '&DOB', &percentage, '&contactNo');
+
+
+
+SELECT * FROM STUDENTS WHERE percentage > 80;
+SELECT firstName, percentage FROM STUDENTS WHERE rollNo = 234;
+SELECT * FROM STUDENTS ORDER BY percentage DESC;
+
+
+UPDATE STUDENTS SET percentage = 80 WHERE rollNo = 1;
+
+
+DELETE FROM STUDENTS WHERE rollNo = 234;
+
+
+SELECT COUNT(*) AS TotalStudents FROM STUDENTS;
+SELECT AVG(percentage) AS AvgPercentage FROM STUDENTS;
+SELECT MAX(percentage) AS MaxPercentage FROM STUDENTS;
+
+
+
+
+TRUNCATE TABLE STUDENTS;
+-- DROP TABLE STUDENTS;
+COMMIT;
