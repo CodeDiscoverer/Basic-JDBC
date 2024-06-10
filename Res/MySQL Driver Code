@@ -1,0 +1,29 @@
+import java.sql.*;
+
+public class ConnEstablish {
+
+    public static void main(String[] args) {
+        // DB Login Credentials
+        String username = "your_mysql_username";
+        String password = "your_mysql_password";
+
+        // Establishing connection
+        try {
+            // Loading the MySQL JDBC driver
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            // Establishing connection
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/your_database_name", username, password);
+            System.out.println("Connected to the database!");
+
+            // Close the connection when done
+            connection.close();
+        } catch (ClassNotFoundException ex) {
+            System.err.println("MySQL JDBC driver not found!");
+            ex.printStackTrace();
+        } catch (SQLException ex) {
+            System.err.println("Failed to connect to the database: " + ex.getMessage());
+            ex.printStackTrace();
+        }
+    }
+}

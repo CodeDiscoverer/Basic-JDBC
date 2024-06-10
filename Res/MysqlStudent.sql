@@ -5,10 +5,6 @@
 -- Create Database
 create database ngp; -- one time
 
-describe students; -- to view a database
-
-drop table students; -- Delete table if necessary
-
 use ngp; -- whenever you start database
 
 -- Create a application user
@@ -27,6 +23,8 @@ CREATE TABLE students (
     gpa DECIMAL(3, 2)
 );
 -- Alter Table
+
+describe students; -- to view a database
 
 ALTER TABLE students
 MODIFY COLUMN id INT AUTO_INCREMENT,
@@ -68,3 +66,7 @@ DELETE FROM students WHERE name = 'Kumar';
 
 -- Select
 UPDATE students SET gpa=9.3 WHERE id=8;
+
+drop table students; -- Delete table if necessary
+
+commit;
