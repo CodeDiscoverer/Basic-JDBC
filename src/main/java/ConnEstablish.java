@@ -4,7 +4,7 @@ public class ConnEstablish {
 
     public static void main(String[] args) {
         // DB Login Credentials
-        String username = "SYS AS SYSDBA";
+        String username = "SYSTEM";
         String password = "Krithvik8055";
 
         // Establishing connection
